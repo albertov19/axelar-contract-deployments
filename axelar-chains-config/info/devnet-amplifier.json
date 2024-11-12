@@ -577,42 +577,72 @@
           }
         }
       }
-    }
-  },
-  "stellar-test2": {
-    "name": "Stellar",
-    "axelarId": "stellar-test2",
-    "rpc": "https://soroban-testnet.stellar.org",
-    "horizonRpc": "https://horizon-testnet.stellar.org",
-    "networkType": "testnet",
-    "explorer": {
-      "name": "Soroban Nownodes",
-      "url": "https://soroban.nownodes.io/testnet"
     },
-    "tokenSymbol": "XLM",
-    "contracts": {
-      "axelar_gateway": {
-        "address": "CBGNPCKNCKKKCI5AUOS2K6H4JDLGPFHHXNDNOEZBIA3VO2NBEZQXFAG5",
-        "deployer": "GALITAYSFTLEVXIBTF5FVUIV7PFVF7VF5VSZVFYCXA7PXSZ2LZMY54VG",
-        "initializeArgs": {
-          "owner": "GALITAYSFTLEVXIBTF5FVUIV7PFVF7VF5VSZVFYCXA7PXSZ2LZMY54VG",
-          "operator": "GALITAYSFTLEVXIBTF5FVUIV7PFVF7VF5VSZVFYCXA7PXSZ2LZMY54VG",
-          "domainSeparator": "e33a8ab3341e36bdcc552924ea42c85ef40dc2cfa41259eb166fb254bc3f036a",
-          "minimumRotationDelay": "0",
-          "previousSignersRetention": "15",
-          "initialSigners": [
-            {
-              "nonce": "0000000000000000000000000000000000000000000000000000000000000000",
-              "signers": [
-                {
-                  "signer": "168983122cd64add01997a5ad115fbcb52fea5ed659a9702b83efbcb3a5e598e",
-                  "weight": "1"
-                }
-              ],
-              "threshold": "1"
-            }
-          ]
+    "stellar-test2": {
+      "name": "Stellar",
+      "axelarId": "stellar-test2",
+      "rpc": "https://soroban-testnet.stellar.org",
+      "horizonRpc": "https://horizon-testnet.stellar.org",
+      "networkType": "testnet",
+      "explorer": {
+        "name": "Soroban Nownodes",
+        "url": "https://soroban.nownodes.io/testnet"
+      },
+      "tokenSymbol": "XLM",
+      "contracts": {
+        "axelar_gateway": {
+          "address": "CBGNPCKNCKKKCI5AUOS2K6H4JDLGPFHHXNDNOEZBIA3VO2NBEZQXFAG5",
+          "deployer": "GALITAYSFTLEVXIBTF5FVUIV7PFVF7VF5VSZVFYCXA7PXSZ2LZMY54VG",
+          "initializeArgs": {
+            "owner": "GALITAYSFTLEVXIBTF5FVUIV7PFVF7VF5VSZVFYCXA7PXSZ2LZMY54VG",
+            "operator": "GALITAYSFTLEVXIBTF5FVUIV7PFVF7VF5VSZVFYCXA7PXSZ2LZMY54VG",
+            "domainSeparator": "e33a8ab3341e36bdcc552924ea42c85ef40dc2cfa41259eb166fb254bc3f036a",
+            "minimumRotationDelay": "0",
+            "previousSignersRetention": "15",
+            "initialSigners": [
+              {
+                "nonce": "0000000000000000000000000000000000000000000000000000000000000000",
+                "signers": [
+                  {
+                    "signer": "168983122cd64add01997a5ad115fbcb52fea5ed659a9702b83efbcb3a5e598e",
+                    "weight": "1"
+                  }
+                ],
+                "threshold": "1"
+              }
+            ]
+          }
         }
+      }
+    },
+    "moonriver-amplifier": {
+      "name": "moonriver-amplifier",
+      "id": "moonriver-amplifier",
+      "axelarId": "moonriver-amplifier",
+      "chainId": 1287,
+      "chainType": "evm",
+      "rpc": "https://rpc.api.moonbase.moonbeam.network",
+      "tokenSymbol": "DEV",
+      "confirmations": 1,
+      "gasOptions": {
+        "gasLimit": 5000000
+      },
+      "contracts": {
+        "AxelarGateway": {},
+        "ConstAddressDeployer": {
+          "address": "0xef21f69597E8c18bB40F3bC45159FE3C85F94BAd",
+          "deployer": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f"
+        },
+        "Create3Deployer": {
+          "salt": "Create3Deployer",
+          "address": "0x353E50D03651029De63e30D90243C5747B762605",
+          "deployer": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f"
+        }
+      },
+      "explorer": {
+        "name": "Moonscan",
+        "url": "https://moonbase.moonscan.io",
+        "api": "https://api-moonbase.moonscan.io/api"
       }
     }
   },
@@ -768,6 +798,19 @@
           ],
           "blockExpiry": 10,
           "confirmationHeight": 1
+        },
+        "moonriver-amplifier": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "serviceName": "validators",
+          "sourceGatewayAddress": "",
+          "votingThreshold": [
+            "6",
+            "10"
+          ],
+          "blockExpiry": 10,
+          "confirmationHeight": 1,
+          "msgIdFormat": "hex_tx_hash_and_event_index",
+          "address": "axelar1wqjm45w0es8p5qmpnu7pjh0tau4yr5hxvlz7l800ccfzt4ucrwks66r9lz"
         }
       },
       "Gateway": {
@@ -794,6 +837,9 @@
         "stellar-test2": {
           "address": "axelar1yekgav0alr7ptakd9uhlengvcfwals6agjceszxzmj77af825y3qs5asgx",
           "codeId": 781
+        },
+        "moonriver-amplifier": {
+          "address": "axelar1a83jmea4ll6470q6tn29rzmvxhjd4spjuw7w5jra4ym4elu9fvxqlv80ra"
         }
       },
       "MultisigProver": {
@@ -890,6 +936,21 @@
           "address": "axelar1s8unjkst9sjc8csa8xu7sspv4maz8frl34ac2ypny0mylllyuz9qej9lfk",
           "codeId": 782,
           "domainSeparator": "0xe33a8ab3341e36bdcc552924ea42c85ef40dc2cfa41259eb166fb254bc3f036a"
+        },
+        "moonriver-amplifier": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "adminAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "destinationChainID": "1287",
+          "signingThreshold": [
+            "6",
+            "10"
+          ],
+          "serviceName": "validators",
+          "verifierSetDiffThreshold": 1,
+          "encoder": "abi",
+          "keyType": "ecdsa",
+          "domainSeparator": "0x893c3e5d553dba684ac63f5abbd712c04117e13a6882222517d6845b1f2e91f7",
+          "address": "axelar19sp67f93nt220wetwp7dymyk2mvr0pj4qk6pszq2ydkh26u0lqrq5hmgqy"
         }
       }
     },
