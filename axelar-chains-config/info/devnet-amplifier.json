@@ -259,24 +259,25 @@
           "gasOptions": {
             "gasLimit": 5000000
           },
-          "deployer": "0xba76c6980428A0b10CFC5d8ccb61949677A61233",
+          "deployer": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f",
           "operator": "0xba76c6980428A0b10CFC5d8ccb61949677A61233",
           "proxyDeploymentArgs": [
-            "0x3c19E701ed674350DE8cAEb0B85A388499246D2d",
-            "0xba76c6980428A0b10CFC5d8ccb61949677A61233",
+            "0x5c6E60b5117BAc69A8010EF39a04DA688d266c1E",
+            "0xDe0276bB155b243aE1265555198ee9AF19DAab3f",
             "0x000000000000000000000000ba76c6980428a0b10cfc5d8ccb61949677a612330000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000002b8b47000000000000000000000000000000000000000000000000000000000000000300000000000000000000000051380cbf0777990e197a3e498ffafd26143e35f8000000000000000000000000000000000000000000000000000000000000000100000000000000000000000061373485594010371dfbf3a8f8bd1736bfda7c090000000000000000000000000000000000000000000000000000000000000001000000000000000000000000c70aa87b38e6ab3c0df6e56338f96a5c00e653080000000000000000000000000000000000000000000000000000000000000001"
           ],
           "initialVerifierSetId": "e5283a7b64fded588737f495421f8d0bf453f6a1deee353bcb9105551a01d4ea",
           "governance": "0xba76c6980428A0b10CFC5d8ccb61949677A61233",
-          "address": "0xF128c84c3326727c3e155168daAa4C0156B87AD1",
-          "implementation": "0x3c19E701ed674350DE8cAEb0B85A388499246D2d",
-          "implementationCodehash": "0x547e0c45465a734b83b4670a395d33d2acb0caeaca5f11851d08811891fa56f1",
+          "address": "0x6f6c4C8678fB1432ebB426a03B40E0E049Ee297E",
+          "implementation": "0x5c6E60b5117BAc69A8010EF39a04DA688d266c1E",
+          "implementationCodehash": "0x79e8694e2dbd073ba1a25a48ec3dc148333030697b7dbcda4e8c160641682f65",
           "deploymentMethod": "create3",
           "previousSignersRetention": 15,
           "domainSeparator": "0xc04aba7c8ccda4059d622ac3e17bb4ef1c1e2358f25bfea5902a44d3a34d616a",
-          "minimumRotationDelay": 0,
-          "salt": "AxelarGateway devnet-amplifier",
-          "connectionType": "amplifier"
+          "minimumRotationDelay": 86400,
+          "salt": "moonriver-amplifier2",
+          "connectionType": "amplifier",
+          "owner": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f"
         },
         "ConstAddressDeployer": {
           "address": "0x98B2920D53612483F91F12Ed7754E51b4A77919e",
@@ -846,7 +847,7 @@
           "codeId": 781
         },
         "moonriver-amplifier": {
-          "address": "axelar1a83jmea4ll6470q6tn29rzmvxhjd4spjuw7w5jra4ym4elu9fvxqlv80ra"
+          "address": "axelar10uyjyxkuus8s4lx6szudk9zwym5x6qfs8xyemdhlh8pvqrgrlscsnz5tl3"
         }
       },
       "MultisigProver": {
@@ -957,7 +958,7 @@
           "encoder": "abi",
           "keyType": "ecdsa",
           "domainSeparator": "0x893c3e5d553dba684ac63f5abbd712c04117e13a6882222517d6845b1f2e91f7",
-          "address": "axelar19sp67f93nt220wetwp7dymyk2mvr0pj4qk6pszq2ydkh26u0lqrq5hmgqy"
+          "address": "axelar1u6v3r7vlzyhfprzkzrn23q0d0059dpkescpqpd6ye0l8qdxcak2sqzxlkw"
         }
       }
     },
