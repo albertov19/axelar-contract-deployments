@@ -37,7 +37,6 @@ const AxelarAmplifierGatewayProxy = require('@axelar-network/axelar-gmp-sdk-soli
 const AxelarAmplifierGateway = require('@axelar-network/axelar-gmp-sdk-solidity/artifacts/contracts/gateway/AxelarAmplifierGateway.sol/AxelarAmplifierGateway.json');
 
 async function getSetupParams(config, chain, operator, options) {
-    console.log(config, chain, operator, options);
     const { signers: signerSets, verifierSetId } = await getWeightedSigners(config, chain, options);
     printInfo('Setup params', JSON.stringify([operator, signerSets], null, 2));
     console.log(signerSets, 'the signers');
@@ -175,7 +174,6 @@ async function deploy(config, chain, options) {
         gateway = gatewayFactory.attach(proxyAddress);
     } else if (!reuseProxy) {
         const operator = options.operator || contractConfig.operator || wallet.address;
-        console.log('test');
         const { params, verifierSetId } = await getSetupParams(config, chain, operator, options);
 
         printInfo('Deploying gateway proxy contract');

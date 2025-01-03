@@ -985,6 +985,40 @@
           "address": "0x29a521e6269EAAb2717F43f464eeA8c376BAfE96"
         }
       }
+    },
+    "moonriver-amp2025": {
+      "name": "moonriver-amp2025",
+      "axelarId": "moonriver-amp2025",
+      "id": "moonriver-amp2025",
+      "rpc": "https://rpc.api.moonbase.moonbeam.network",
+      "contracts": {
+        "Create3Deployer": {
+          "address": "0x6513Aedb4D1593BA12e50644401D976aebDc90d8",
+          "deploymentMethod": "create2",
+          "salt": "Create3Deployer"
+        },
+        "AxelarGateway": {
+          "address": "0xa5CBC6a9A6ba51A59184dC4d7621541f0fd9dE9D",
+          "deployer": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f",
+          "operator": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f",
+          "proxyDeploymentArgs": [
+            "0x9803df6537A9B73E441Ac28376d5E28631171B91",
+            "0xDe0276bB155b243aE1265555198ee9AF19DAab3f",
+            "0x000000000000000000000000de0276bb155b243ae1265555198ee9af19daab3f0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000004ae0cb00000000000000000000000000000000000000000000000000000000000000010000000000000000000000001e6e85cf1e6fc012f9a4c9cafc2287b18cfc037e0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "initialVerifierSetId": "694258696cfa15ae883feeb1ea64002bd6feeb7c96c99b2e59905657ebc648ee",
+          "implementation": "0x9803df6537A9B73E441Ac28376d5E28631171B91",
+          "implementationCodehash": "0x0181b3b930d425b9ecd1bcb417650f1239f8e1a136ed83a1b6b8e783836376f2",
+          "deploymentMethod": "create3",
+          "previousSignersRetention": 15,
+          "domainSeparator": "0xb03ec5ae24d594a76ffd6f6c15c946bb1663e4902405fc7b43545a9856df4c7e",
+          "minimumRotationDelay": 86400,
+          "connectionType": "amplifier",
+          "owner": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f",
+          "salt": "moonriver-amp2025"
+        }
+      },
+      "chainType": "evm"
     }
   },
   "stellar-test2": {
@@ -1234,8 +1268,23 @@
           "confirmationHeight": 1,
           "msgIdFormat": "hex_tx_hash_and_event_index",
           "addressFormat": "eip55",
-          "codeId": 839,
-          "address": "axelar1ht2azysk3fgus58hm80ln6gx7f0auk94w3y4uehh8an4w2d2jxysw0kypx"
+          "codeId": 626,
+          "address": "axelar1gft0pr64ndmgcw432rjy2zmy3mf7llnfrsg4afj8swsltm2v7n4s3968lg"
+        },
+        "moonriver-amp2025": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "serviceName": "validators",
+          "sourceGatewayAddress": "0xa5CBC6a9A6ba51A59184dC4d7621541f0fd9dE9D",
+          "votingThreshold": [
+            "1",
+            "1"
+          ],
+          "blockExpiry": 10,
+          "confirmationHeight": 1,
+          "msgIdFormat": "hex_tx_hash_and_event_index",
+          "addressFormat": "eip55",
+          "codeId": 626,
+          "address": "axelar12waxn6exq5v0srpwaysvueqecu6xmtda382vh5chrmzudmm9ngws8yy39p"
         }
       },
       "Gateway": {
@@ -1270,8 +1319,13 @@
         },
         "moonriver-amp55": {
           "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
-          "codeId": 840,
-          "address": "axelar1pqnamer3juxqwzjqfw8ssau5dg5mt8zxjgt734g9c7h0jrsf0hksjnr66n"
+          "codeId": 616,
+          "address": "axelar13f4rhfky9u2xsljd9yn9nszhrs4yqrq8erc50fgsey6kfyk6czlsp0u3zl"
+        },
+        "moonriver-amp2025": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "codeId": 616,
+          "address": "axelar1hqvu6j9xd50ysx53mx2qjuln4l4jwpl7py0mrlu3q4anz927nqkqatvxmv"
         }
       },
       "MultisigProver": {
@@ -1395,9 +1449,24 @@
           "verifierSetDiffThreshold": 0,
           "encoder": "abi",
           "keyType": "ecdsa",
-          "codeId": 841,
+          "codeId": 618,
           "domainSeparator": "0x61f99675fbbd6a16cb25a1821c97801ac2efd2d82f666a0c7b8648d0696d846a",
-          "address": "axelar1g03gxz33es7g29lp59fta90v4dm72rhhdmafnnqp935cg3nk203svlcx4w"
+          "address": "axelar1uav4dasutuk0pjpvu253pgsd9tp2ag7dkx6750uq4l05wempr46sv95nlq"
+        },
+        "moonriver-amp2025": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "adminAddress": "axelar12ptwmqkw63lgchavsz82yvj4vpxpwmpm0f5dd7",
+          "signingThreshold": [
+            "1",
+            "1"
+          ],
+          "serviceName": "validators",
+          "verifierSetDiffThreshold": 0,
+          "encoder": "abi",
+          "keyType": "ecdsa",
+          "codeId": 618,
+          "domainSeparator": "0xb03ec5ae24d594a76ffd6f6c15c946bb1663e4902405fc7b43545a9856df4c7e",
+          "address": "axelar1xzfuj3v3u9lgykv9sktllk0e5rxyezp5hnxte0hutthmupm5qn6safytxn"
         }
       }
     },

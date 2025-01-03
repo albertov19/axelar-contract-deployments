@@ -52,9 +52,9 @@ async function processCommand(
 ) {
     // Deploy CosmWasm contracts
     const contracts = [
-        { name: 'VotingVerifier', codeId: 839 }, // Hardcoded Code ID
-        { name: 'Gateway', codeId: 840 }, // Hardcoded Code ID
-        { name: 'MultisigProver', codeId: 841 }, // Hardcoded Code ID
+        { name: 'VotingVerifier', codeId: 626 }, // Hardcoded Code ID
+        { name: 'Gateway', codeId: 616 }, // Hardcoded Code ID
+        { name: 'MultisigProver', codeId: 618 }, // Hardcoded Code ID
     ];
 
     for (const { name, codeId } of contracts) {

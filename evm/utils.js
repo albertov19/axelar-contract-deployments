@@ -1017,7 +1017,6 @@ async function getWeightedSigners(config, chain, options) {
             nonce: HashZero,
         };
     } else {
-        console.log('test2');
         const addresses = await getAmplifierKeyAddresses(config, chain.axelarId);
         const nonce = hexZeroPad(BigNumber.from(addresses.created_at).toHexString(), 32);
 
