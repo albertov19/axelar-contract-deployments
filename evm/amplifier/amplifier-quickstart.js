@@ -6,8 +6,23 @@ const { mainProcessor, printInfo, printLog } = require('../utils');
 
 const { deployCosmWasmContract, deployEvmContract } = require('./deployContracts');
 const { runCliCommand } = require('./utils');
+const readline = require('readline');
 
-const runAmpd = async () => {
+const pauseForEnter = async () => {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise((resolve) => {
+        rl.question('Press Enter to continue...', () => {
+            rl.close();
+            resolve();
+        });
+    });
+};
+
+/*const runAmpd = async () => {
     try {
         execSync('pgrep ampd', { stdio: 'ignore' });
         console.log('ampd is already running');
@@ -28,7 +43,7 @@ const registerChainSupport = async (chainName) => {
     } catch (error) {
         console.error(`Failed to register chain support for ${chainName}: ${error.message}`);
     }
-};
+};*/
 
 async function processCommand(
     config,
@@ -37,9 +52,9 @@ async function processCommand(
 ) {
     // Deploy CosmWasm contracts
     const contracts = [
-        { name: 'VotingVerifier', codeId: 626 }, // Hardcoded Code ID
-        { name: 'Gateway', codeId: 616 }, // Hardcoded Code ID
-        { name: 'MultisigProver', codeId: 618 }, // Hardcoded Code ID
+        { name: 'VotingVerifier', codeId: 839 }, // Hardcoded Code ID
+        { name: 'Gateway', codeId: 840 }, // Hardcoded Code ID
+        { name: 'MultisigProver', codeId: 841 }, // Hardcoded Code ID
     ];
 
     for (const { name, codeId } of contracts) {
@@ -54,20 +69,22 @@ async function processCommand(
         });
     }
 
+    await pauseForEnter();
+
     // Fetch new chain integration contracts
-    const newChainContracts = await getAmplifierContractOnchainConfig(config, chainName.name);
+    //const newChainContracts = await getAmplifierContractOnchainConfig(config, chainName.name);
 
     // Run ampd and extract Verifier address
-    const verifierAddr = (await runAmpd()).trim().replace(/.*(axelar[a-z0-9]+)/, '$1');
+    //const verifierAddr = (await runAmpd()).trim().replace(/.*(axelar[a-z0-9]+)/, '$1');
 
     // Register Verifier support for the new chain
-    await registerChainSupport(chainName.name, verifierAddr);
+    //await registerChainSupport(chainName.name, verifierAddr);
 
     // Update Verifier set on Prover contract
-    const updateVerifierSetCommand = `axelard tx wasm execute ${newChainContracts.prover} '"update_verifier_set"' --from ${admin} --gas auto --gas-adjustment 2 --node ${amplifierNode} --chain-id ${amplifierChainId} --gas-prices 1uamplifier --keyring-backend ${keyringBackend}`;
+    //const updateVerifierSetCommand = `axelard tx wasm execute ${newChainContracts.prover} '"update_verifier_set"' --from ${admin} --gas auto --gas-adjustment 2 --node ${amplifierNode} --chain-id ${amplifierChainId} --gas-prices 1uamplifier --keyring-backend ${keyringBackend}`;
 
-    printLog(`Updating verifier set on prover contract: ${newChainContracts.prover}`);
-    runCliCommand(updateVerifierSetCommand);
+    //printLog(`Updating verifier set on prover contract: ${newChainContracts.prover}`);
+    //runCliCommand(updateVerifierSetCommand);
 
     // Deploy EVM Gateway contract
     await deployEvmContract(config, chainName, { salt, env, yes, privateKey }, false);
@@ -107,7 +124,7 @@ async function main(options) {
         governanceAddress: 'axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9',
         serviceName: 'validators',
         sourceGatewayAddress: gateway,
-        votingThreshold: ['6', '10'],
+        votingThreshold: ['1', '1'],
         blockExpiry: 10,
         confirmationHeight: 1,
         msgIdFormat: 'hex_tx_hash_and_event_index',
@@ -119,7 +136,7 @@ async function main(options) {
     configNew.axelar.contracts.MultisigProver[theNewChain] = {
         governanceAddress: 'axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9',
         adminAddress: options.admin,
-        signingThreshold: ['6', '10'],
+        signingThreshold: ['1', '1'],
         serviceName: 'validators',
         verifierSetDiffThreshold: 0,
         encoder: 'abi',

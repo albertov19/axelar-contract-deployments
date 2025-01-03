@@ -379,32 +379,18 @@
     },
     "moonriver-amplifier": {
       "name": "moonriver-amplifier",
-      "id": "moonriver-amplifier",
       "axelarId": "moonriver-amplifier",
-      "chainId": 1287,
-      "chainType": "evm",
+      "id": "moonriver-amplifier",
       "rpc": "https://rpc.api.moonbase.moonbeam.network",
-      "tokenSymbol": "DEV",
-      "confirmations": 1,
-      "gasOptions": {
-        "gasLimit": 5000000
-      },
       "contracts": {
-        "AxelarGateway": {},
-        "ConstAddressDeployer": {
-          "address": "0xef21f69597E8c18bB40F3bC45159FE3C85F94BAd",
-          "deployer": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f"
-        },
         "Create3Deployer": {
-          "salt": "Create3Deployer",
-          "address": "0x353E50D03651029De63e30D90243C5747B762605",
-          "deployer": "0xDe0276bB155b243aE1265555198ee9AF19DAab3f"
+          "address": "0x6513Aedb4D1593BA12e50644401D976aebDc90d8",
+          "deploymentMethod": "create2",
+          "salt": "Create3Deployer"
+        },
+        "AxelarGateway": {
+          "address": "0xe58e62c107183F5ac4be6F4363bAb52D2968D467"
         }
-      },
-      "explorer": {
-        "name": "Moonscan",
-        "url": "https://moonbase.moonscan.io",
-        "api": "https://api-moonbase.moonscan.io/api"
       }
     },
     "optimism-sepolia": {
@@ -983,6 +969,22 @@
       "tokenSymbol": "AMPLIFIER",
       "gasPrice": "0.00005uamplifier",
       "gasLimit": "auto"
+    },
+    "moonriver-amp55": {
+      "name": "moonriver-amp55",
+      "axelarId": "moonriver-amp55",
+      "id": "moonriver-amp55",
+      "rpc": "https://rpc.api.moonbase.moonbeam.network",
+      "contracts": {
+        "Create3Deployer": {
+          "address": "0x6513Aedb4D1593BA12e50644401D976aebDc90d8",
+          "deploymentMethod": "create2",
+          "salt": "Create3Deployer"
+        },
+        "AxelarGateway": {
+          "address": "0x29a521e6269EAAb2717F43f464eeA8c376BAfE96"
+        }
+      }
     }
   },
   "stellar-test2": {
@@ -1204,6 +1206,36 @@
           ],
           "blockExpiry": 10,
           "confirmationHeight": 1
+        },
+        "moonriver-amplifier": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "serviceName": "validators",
+          "sourceGatewayAddress": "0xe58e62c107183F5ac4be6F4363bAb52D2968D467",
+          "votingThreshold": [
+            "1",
+            "1"
+          ],
+          "blockExpiry": 10,
+          "confirmationHeight": 1,
+          "msgIdFormat": "hex_tx_hash_and_event_index",
+          "addressFormat": "eip55",
+          "codeId": 839,
+          "address": "axelar1dwkjsltg3f9ge7s74jal50xu7wtekw0m3snqr4pl0ycfdz3ylyqqlgkymc"
+        },
+        "moonriver-amp55": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "serviceName": "validators",
+          "sourceGatewayAddress": "0x29a521e6269EAAb2717F43f464eeA8c376BAfE96",
+          "votingThreshold": [
+            "1",
+            "1"
+          ],
+          "blockExpiry": 10,
+          "confirmationHeight": 1,
+          "msgIdFormat": "hex_tx_hash_and_event_index",
+          "addressFormat": "eip55",
+          "codeId": 839,
+          "address": "axelar1ht2azysk3fgus58hm80ln6gx7f0auk94w3y4uehh8an4w2d2jxysw0kypx"
         }
       },
       "Gateway": {
@@ -1230,6 +1262,16 @@
         "stellar-test2": {
           "address": "axelar1yekgav0alr7ptakd9uhlengvcfwals6agjceszxzmj77af825y3qs5asgx",
           "codeId": 781
+        },
+        "moonriver-amplifier": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "codeId": 840,
+          "address": "axelar18uevj06dpkel3n5rfsjl3ecf807x0n2d972qcmqnvryrpprcqe8smwr5sr"
+        },
+        "moonriver-amp55": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "codeId": 840,
+          "address": "axelar1pqnamer3juxqwzjqfw8ssau5dg5mt8zxjgt734g9c7h0jrsf0hksjnr66n"
         }
       },
       "MultisigProver": {
@@ -1326,6 +1368,36 @@
           "address": "axelar1s8unjkst9sjc8csa8xu7sspv4maz8frl34ac2ypny0mylllyuz9qej9lfk",
           "codeId": 782,
           "domainSeparator": "0xe33a8ab3341e36bdcc552924ea42c85ef40dc2cfa41259eb166fb254bc3f036a"
+        },
+        "moonriver-amplifier": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "adminAddress": "axelar12ptwmqkw63lgchavsz82yvj4vpxpwmpm0f5dd7",
+          "signingThreshold": [
+            "1",
+            "1"
+          ],
+          "serviceName": "validators",
+          "verifierSetDiffThreshold": 0,
+          "encoder": "abi",
+          "keyType": "ecdsa",
+          "codeId": 841,
+          "domainSeparator": "0x893c3e5d553dba684ac63f5abbd712c04117e13a6882222517d6845b1f2e91f7",
+          "address": "axelar1es29qlkjyprj8a4kep5l0pkupwuq5w0mg3u2sycfrcrftsqjlj3sdag5rq"
+        },
+        "moonriver-amp55": {
+          "governanceAddress": "axelar1zlr7e5qf3sz7yf890rkh9tcnu87234k6k7ytd9",
+          "adminAddress": "axelar12ptwmqkw63lgchavsz82yvj4vpxpwmpm0f5dd7",
+          "signingThreshold": [
+            "1",
+            "1"
+          ],
+          "serviceName": "validators",
+          "verifierSetDiffThreshold": 0,
+          "encoder": "abi",
+          "keyType": "ecdsa",
+          "codeId": 841,
+          "domainSeparator": "0x61f99675fbbd6a16cb25a1821c97801ac2efd2d82f666a0c7b8648d0696d846a",
+          "address": "axelar1g03gxz33es7g29lp59fta90v4dm72rhhdmafnnqp935cg3nk203svlcx4w"
         }
       }
     },
